@@ -1,0 +1,69 @@
+ # Model Path
+model: "/home/ec2-user/SageMaker/Number-Plate/License-Plate-Detection-Hackathon/code/best.pt"  # Path to the trained YOLO model
+
+# Image Size
+imgsz: 640  # Size of the input image for the model (height, width)
+
+# Source
+source: "/home/ec2-user/SageMaker/Number-Plate/License-Plate-Detection-Hackathon/code/runs/detection_run/img1.png"  # Path to the source of images or video (can be file or directory)
+
+# Confidence and IoU Thresholds
+conf: 0.25  # Confidence threshold for predictions (0.0 to 1.0)
+iou: 0.45   # IoU threshold for non-maximum suppression (0.0 to 1.0)
+
+# Non-Maximum Suppression (NMS)
+agnostic_nms: false  # Whether to use agnostic NMS (boolean)
+
+# Maximum Number of Detections
+max_det: 1000  # Maximum number of detections per image
+
+# Save and Display Options
+save_txt: true  # Save results to text files (boolean)
+save: true      # Save images or videos with annotations (boolean)
+save_crop: true # Save cropped images of detected objects (boolean)
+show: true      # Show images with annotations (boolean)
+hide_labels: false  # Hide labels in annotations (boolean)
+hide_conf: false    # Hide confidence scores in annotations (boolean)
+
+# Line Thickness for Annotations
+line_thickness: 3  # Thickness of bounding box lines (integer)
+
+# Project Directory
+project: "runs"   # Directory where results will be saved
+task: "detect"    # Task type (e.g., detection, segmentation)
+name: "detection_run"  # Name of the current run or experiment
+exist_ok: true    # Allow existing project directory (boolean)
+
+# Dataset Path
+data: "/home/ec2-user/SageMaker/Number-Plate/License-Plate-Detection-Hackathon/code/Dataset/data.yaml"  # Path to dataset YAML file
+
+# Device Settings
+device: "cpu"  # Device to use for inference (cpu or valid CUDA device)
+
+# Half Precision
+half: false    # Use half-precision (FP16) if set to true and using CUDA
+
+# DNN Backend
+dnn: false     # Use DNN backend if set to true
+
+# Video Processing
+vid_stride: 1  # Frame stride for video processing (1 to process every frame, >1 to skip frames)
+
+# Visualization
+visualize: false  # Set to true to save visualizations of predictions
+
+# Additional Parameters
+classes: null  # List of classes to detect, set to null for all classes
+rect: false    # Use rectangular bounding boxes (boolean)
+augment: false  # Use data augmentation during inference (boolean)
+
+# Logging and Debugging
+log: true  # Enable logging (boolean)
+verbose: false  # Verbose mode for more detailed output (boolean)
+
+# Advanced Options
+resize: false  # Resize input images (boolean)
+batch_size: 1  # Batch size for processing (integer)
+
+# Output Directory
+output_dir: "results"  # Directory for saving outputs
